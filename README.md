@@ -14,7 +14,7 @@
 composer require sametsahindogan/guzzle-wrapper
 ```
 
-## Request Usage
+## Request
 **GET**
 
 ```php
@@ -30,7 +30,7 @@ $api = (new ApiCallBuilder('https://dev.test.com', '/login', ApiCallBuilder::HTT
 $response = $api->body([ 'Your' => 'Body' ])->call();
 ```
 
-## Response Usage
+## Response
 ```php
 $response->getData(); // Parsing response data.
 $response->getStatusCode(); // Parsing response status code.
