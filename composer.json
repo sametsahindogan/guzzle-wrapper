@@ -1,0 +1,22 @@
+{
+  "name": "sametsahindogan/guzzle-wrapper",
+  "description": "A wrapper for PHP Guzzle HTTP Client",
+  "type": "library",
+  "require": {
+    "guzzlehttp/guzzle": "^6.5",
+    "ext-json": "*"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "sametsahindogan",
+      "email": "sametsahindogan@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Sametsahindogan\\GuzzleWrapper\\": "src/"
+    }
+  }
+}
