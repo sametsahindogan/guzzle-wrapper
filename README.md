@@ -1,6 +1,6 @@
 # guzzle-wrapper
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://raw.githubusercontent.com/kevoj/redis-jwt/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://raw.githubusercontent.com/sametsahindogan/guzzle-wrapper/master/LICENSE)
 
 > This package a simple wrapper for [guzzle/guzzle](https://github.com/guzzle/guzzle).
 
