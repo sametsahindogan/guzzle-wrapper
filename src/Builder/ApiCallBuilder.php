@@ -6,6 +6,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Request;
+use Psr\Http\Message\ResponseInterface;
 use Sametsahindogan\GuzzleWrapper\Interfaces\HTTPRequest;
 
 /**
@@ -14,7 +15,6 @@ use Sametsahindogan\GuzzleWrapper\Interfaces\HTTPRequest;
  */
 class ApiCallBuilder implements HTTPRequest
 {
-
     /** @var string */
     const HTTP_GET = 'GET';
 
@@ -164,7 +164,7 @@ class ApiCallBuilder implements HTTPRequest
     }
 
     /**
-     * @return ApiResponse
+     * @return ResponseInterface
      */
     public function call()
     {
@@ -187,11 +187,11 @@ class ApiCallBuilder implements HTTPRequest
                 $data["query"] = $this->query_string;
             }
 
-            return (new ApiResponse($this->httpClient->request($this->method, $this->apiUrl . $this->uri, $data)));
+            return $this->httpClient->request($this->method, $this->apiUrl . $this->uri, $data);
 
         } catch (ClientException|GuzzleException $e) {
 
-            return (new ApiResponse($e->getResponse()));
+            return $e->getResponse();
 
         }
 
