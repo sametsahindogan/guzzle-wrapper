@@ -175,16 +175,16 @@ class ApiCallBuilder implements HTTPRequest
                 $data["json"] = $this->body;
 
             }
-            if (!empty($this->form_params)) {
-                $data["form_params"] = $this->form_params;
+            if (!empty($this->formParams)) {
+                $data["form_params"] = $this->formParams;
 
             }
             if (!empty($this->multipart)) {
                 $data["multipart"] = $this->multipart;
 
             }
-            if (!empty($this->query_string)) {
-                $data["query"] = $this->query_string;
+            if (!empty($this->queryString)) {
+                $data["query"] = $this->queryString;
             }
 
             return $this->httpClient->request($this->method, $this->apiUrl . $this->uri, $data);
