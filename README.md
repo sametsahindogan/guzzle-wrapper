@@ -6,7 +6,7 @@
 
 ## Requirements
 
-- [guzzle/guzzle](https://github.com/guzzle/guzzle) **>= 6.0** (**Recommended 6.5**)
+- [guzzle/guzzle](https://github.com/guzzle/guzzle) **>= 7.0**
 
 ## Installation
 
