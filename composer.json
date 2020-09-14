@@ -3,7 +3,7 @@
   "description": "A wrapper for PHP Guzzle HTTP Client",
   "type": "library",
   "require": {
-    "guzzlehttp/guzzle": "^6.5",
+    "guzzlehttp/guzzle": "^7.0.1",
     "ext-json": "*"
   },
   "license": "MIT",
