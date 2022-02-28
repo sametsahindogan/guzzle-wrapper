@@ -42,6 +42,9 @@ class ApiCallBuilder implements HTTPRequest
     /** @var array $body */
     protected $body = [];
 
+    /** @var string $rawBody */
+    protected $rawBody;
+
     /** @var array $formParams */
     protected $formParams = [];
 
@@ -105,6 +108,16 @@ class ApiCallBuilder implements HTTPRequest
     }
 
     /**
+     * @param string $rawBody
+     * @return $this
+     */
+    public function rawBody(string $rawBody)
+    {
+        $this->rawBody = $rawBody;
+        return $this;
+    }
+
+    /**
      * @param array $formParams
      * @return $this
      */
@@ -150,9 +163,10 @@ class ApiCallBuilder implements HTTPRequest
      */
     public function basicAuthentication(string $token)
     {
-        $this->headers['Authorization'] = 'Basic '. $token;
+        $this->headers['Authorization'] = 'Basic ' . $token;
         return $this;
     }
+
     /**
      * @param array $queryString
      * @return $this
@@ -185,6 +199,9 @@ class ApiCallBuilder implements HTTPRequest
             }
             if (!empty($this->queryString)) {
                 $data["query"] = $this->queryString;
+            }
+            if (!empty($this->rawBody)) {
+                $data["body"] = $this->rawBody;
             }
 
             return $this->httpClient->request($this->method, $this->apiUrl . $this->uri, $data);

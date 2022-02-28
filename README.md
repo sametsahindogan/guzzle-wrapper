@@ -36,9 +36,11 @@ Here are a few optional methods to you can add your chain;
 ```php
 ->headers([ 'Your' => 'Headers' ])
 ->bearerToken(' Your Token ')
-->basicAuth(' Your Credantials ')
+->basicAuth(' Your Credentials ')
 ->formParams([ 'Your' => 'Params' ])
 ->multipart([ 'Your' => 'Multipart' ])
+->body([ 'Your' => 'Body' ])
+->rawBody('Raw Body')
 ->queryString(' Your Query String ')
 ```
 
